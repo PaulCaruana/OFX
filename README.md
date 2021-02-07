@@ -47,6 +47,7 @@ yarn start (ensure build has been done prior)
 - Enhance UI look and feel of page
 - Add more information on UI regarding minimum transfer amounts
 - Add style components to ui and incorporate a better layout structure
+- Make themes fully functional
 
 ### Issues
 - Warnings on console
