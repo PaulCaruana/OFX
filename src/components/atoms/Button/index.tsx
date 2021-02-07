@@ -1,6 +1,7 @@
 import React from 'react'
 import MuiButton from '@material-ui/core/Button'
 
+//TODO: Fix types
 export interface ButtonProps {
   label?: string
   variant?: any

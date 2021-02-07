@@ -12,9 +12,12 @@ import {
 } from '@material-ui/core'
 import { Controller, useForm } from 'react-hook-form'
 import validator from 'validator'
+import dynamic from 'next/dynamic'
 import { CurrencyData } from '~/types'
 import { currency, currencyList } from '~/constants'
 import { Button } from '~/components/atoms/Button'
+// Make phone input not to use SSR which causes it to fail. Refer to nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr
+const MuiPhoneInput = dynamic(() => import('material-ui-phone-number'), { ssr: false }) as any
 
 export interface GetQuoteProps {
   onSubmit: (data: CurrencyData) => { any }
@@ -102,13 +105,16 @@ export const GetQuote: React.FC<GetQuoteProps> = ({ onSubmit }) => {
           />
         </Grid>
         <Grid item xs={12}>
-          <TextField
-            fullWidth
-            autoFocus={true}
-            label="Telephone / Mobile"
-            name="phone"
-            inputRef={register()}
-          />
+          <FormControl className={classes.formControl}>
+            <Controller
+              as={<MuiPhoneInput defaultCountry="au" />}
+              control={control}
+              error={false}
+              helperText=""
+              label="Telephone / Mobile"
+              name="phone"
+            />
+          </FormControl>
         </Grid>
         <Grid item xs={6}>
           <FormControl className={classes.formControl}>

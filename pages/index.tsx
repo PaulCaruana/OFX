@@ -43,7 +43,7 @@ export default function App() {
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <Typography gutterBottom variant="h3">
-              <Box paddingTop={30} textAlign="center">
+              <Box paddingTop={3} textAlign="center">
                 <div style={{ paddingTop: '24px' }}>OFX Currency Converter</div>
               </Box>
             </Typography>

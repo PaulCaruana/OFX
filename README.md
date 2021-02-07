@@ -44,8 +44,6 @@ yarn start (ensure build has been done prior)
 - Put sensitive information and end points in an env file.
 - The Name, Email and Phone fields are not used. This would obviously be store and used in a real application
 - Use the error messages supplied from API when the request fails
-- Add International Codes to phone. I found an NPM package that does this called 'material-ui-phone-number' 
-but this failed with Next.js in SSR as it tries to find a Window object.
 - Enhance UI look and feel of page
 - Add more information on UI regarding minimum transfer amounts
 - Add style components to ui and incorporate a better layout structure
@@ -60,7 +58,7 @@ but this failed with Next.js in SSR as it tries to find a Window object.
 It allows you to browse a component library, view the different states 
 of each component, and interactively develop and test components. See https://storybook.js.org for details.
 - **material-ui**: In a nutshell, Material-UI is an open-source project that features React components that implement Google's Material Design. 
-See https://material-ui.com/ for details.
+See https://material-ui.com/ for details. This includes setting up light/dark themes
 - **jest**: Simple all emcompassing test solution. See https://jestjs.io/ for details.
 - **SWR**: is a React Hooks library for smart remote data fetching. See https://www.npmjs.com/package/swr for details.
 - **eslint**: A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. 

@@ -2,11 +2,7 @@ import React from 'react'
 import ThemeProvider from '~/themes/ThemeProvider'
 import type { AppProps } from 'next/app'
 import CssBaseline from '@material-ui/core/CssBaseline'
-
-const navbarLinks = [
-  { href: '/how-it-works', label: 'How it works' },
-  { href: '/support', label: 'Support' },
-]
+import NoSsr from '@material-ui/core/NoSsr'
 
 function MyApp({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
@@ -18,10 +14,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [])
 
   return (
-    <ThemeProvider>
-      <CssBaseline />
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <NoSsr>
+      <ThemeProvider>
+        <CssBaseline />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </NoSsr>
   )
 }
 
