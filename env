@@ -1,6 +1,0 @@
-CINEMAWORLD_FILM_SEARCH_API=https://challenge.lexicondigital.com.au/api/cinemaworld/movies
-CINEMAWORLD_FILM_MOVIE_API=https://challenge.lexicondigital.com.au/api/cinemaworld/movie
-CINEMAWORLD_FILM_API_KEY=<ENTER API KEY>
-FILMWORLD_FILM_SEARCH_API=https://challenge.lexicondigital.com.au/api/filmworld/movies
-FILMWORLD_FILM_MOVIE_API=https://challenge.lexicondigital.com.au/api/filmworld/movie
-FILMWORLD_FILM_API_KEY=<ENTER API KEY>

@@ -9,6 +9,7 @@ export interface ButtonProps {
   endIcon?: any
   onClick?: any
   className?: any
+  type?: any
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -17,12 +18,18 @@ export const Button: React.FC<ButtonProps> = ({
   color = 'primary',
   startIcon,
   endIcon,
+  type,
   ...props
 }) => {
-  const vari = 'contained'
-  const col = 'primary'
   return (
-    <MuiButton variant={variant} startIcon={startIcon} endIcon={endIcon} color={color} {...props}>
+    <MuiButton
+      type={type}
+      variant={variant}
+      startIcon={startIcon}
+      endIcon={endIcon}
+      color={color}
+      {...props}
+    >
       {label}
     </MuiButton>
   )

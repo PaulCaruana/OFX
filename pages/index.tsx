@@ -1,59 +1,86 @@
-import React from 'react'
-import Typography from '@material-ui/core/Typography'
+import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import Grid from '@material-ui/core/Grid'
-import useFetchMovies from '~/hooks/movies/useFetchMovies'
-import { Tiles } from '~/components/templates/Tiles'
-import { MovieCard } from '~/components/molecules/Card'
+import { CurrencyData } from '~/types'
+import { errorMsg } from '~/constants'
+import { Box, Container, Grid, Typography } from '@material-ui/core'
+import { GetQuote } from '~/components/organisms/GetQuote'
+import { ShowQuote } from '~/components/organisms/ShowQuote'
+import useFetchOFX from '~/hooks/ofx/useFetchOFX'
 
 const useStyles = makeStyles({
   root: {
-    width: '100%',
-    align: 'center',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
-  spacing: {
-    marginTop: '10px',
+    flexGrow: 1,
   },
 })
 
-const Index: React.FC = () => {
-  const data = useFetchMovies()
-  const movies = data
-    ? data.Movies.map(movie => {
-        return {
-          id: movie.ID,
-          title: movie.Title,
-          image: movie.Poster,
-          link: `/movie/${movie.ID}`,
-        }
-      })
-    : null
+export default function App() {
   const classes = useStyles()
+  const [currencyData, setCurrencyData] = useState<CurrencyData>(null)
+
+  const onSubmit = ({ fromCurrencyCode, toCurrencyCode, amount }: CurrencyData) => {
+    const payload = {
+      fromCurrencyCode,
+      toCurrencyCode,
+      amount,
+    }
+    setCurrencyData(payload)
+    return null
+  }
+
+  let showResults = false
+  let message = null
+
+  const { spotRate, error } = useFetchOFX(currencyData)
+  if (error) {
+    message = errorMsg.request
+  } else if (spotRate) {
+    showResults = true
+  }
 
   return (
     <div className={classes.root}>
-      <Grid container direction="column" justify="center" alignItems="center">
-        <div>
-          <Typography variant="h2" component="h2" gutterBottom>
-            Prince&apos;s Theatre
-          </Typography>
-        </div>
-        <div>
-          <Typography variant="h5" gutterBottom>
-            <b>Enjoy movies in the comfort of your home for the best price</b>
-          </Typography>
-        </div>
-        <Typography variant="body1" gutterBottom className={classes.spacing}>
-          <i>
-            Dust off the &apos;Covid&apos; blues, cosy up and enjoy our classic range of movies on
-            offer.
-          </i>
-        </Typography>
-        {movies && <Tiles tilesData={movies} Tile={MovieCard} />}
-      </Grid>
+      <Container>
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <Typography gutterBottom variant="h3">
+              <Box paddingTop={30} textAlign="center">
+                <div style={{ paddingTop: '24px' }}>OFX Currency Converter</div>
+              </Box>
+            </Typography>
+          </Grid>
+
+          <Grid item xs={12}>
+            <Typography gutterBottom variant="caption">
+              <Box color="red">
+                <div style={{ color: 'red' }}>{message}</div>
+              </Box>
+            </Typography>
+          </Grid>
+
+          <Grid item xs={6}>
+            <GetQuote onSubmit={onSubmit} />
+          </Grid>
+          <Grid item xs={6}>
+            <Box padding={3}>
+              <div style={{ paddingTop: '20px', paddingLeft: '20px' }}>
+                {showResults && (
+                  <ShowQuote
+                    customerRate={spotRate?.CustomerRate}
+                    fromCurrencyCode={currencyData.fromCurrencyCode}
+                    fromAmount={currencyData.amount}
+                    toCurrencyCode={currencyData.toCurrencyCode}
+                    toAmount={spotRate?.CustomerAmount}
+                    fee={spotRate?.Fee}
+                    feeFreeThreshold={spotRate?.FeeFreeThreshold}
+                    message={spotRate?.Message}
+                  />
+                )}
+              </div>
+            </Box>
+          </Grid>
+        </Grid>
+      </Container>
     </div>
   )
 }
-export default Index
+//export default CurrencyQuote
