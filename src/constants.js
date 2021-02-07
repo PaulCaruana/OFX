@@ -147,5 +147,5 @@ export const currency = {
 
 export const currencyList = Object.keys(currency).map(code => currency[code])
 export const errorMsg = {
-  request: 'Request failed, check that "from" and "to" currencies do not match',
+  request: 'Request failed, please try again',
 }

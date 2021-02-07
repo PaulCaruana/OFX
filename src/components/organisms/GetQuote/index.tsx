@@ -13,7 +13,7 @@ import {
 import { Controller, useForm } from 'react-hook-form'
 import validator from 'validator'
 import { CurrencyData } from '~/types'
-import { currencyList } from '~/constants'
+import { currency, currencyList } from '~/constants'
 import { Button } from '~/components/atoms/Button'
 
 export interface GetQuoteProps {
@@ -31,7 +31,14 @@ type Inputs = {
 }
 
 export const GetQuote: React.FC<GetQuoteProps> = ({ onSubmit }) => {
-  const { register, handleSubmit, watch, errors, control } = useForm<Inputs>()
+  const { register, handleSubmit, watch, errors, control, getValues } = useForm<Inputs>()
+  const watchFrom = watch('fromCurrencyCode', currency.AUD.code)
+  const watchTo = watch('toCurrencyCode', currency.USD.code)
+
+  const getCurrencyList = (type: string) => {
+    const excludeCode = type === 'from' ? watchTo : watchFrom
+    return currencyList.filter(curr => curr.code !== excludeCode)
+  }
 
   const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -109,7 +116,7 @@ export const GetQuote: React.FC<GetQuoteProps> = ({ onSubmit }) => {
             <Controller
               as={
                 <Select>
-                  {currencyList.map(currency => (
+                  {getCurrencyList('from').map(currency => (
                     <MenuItem key={currency.code} value={currency.code}>
                       {currency.name}
                     </MenuItem>
@@ -128,7 +135,7 @@ export const GetQuote: React.FC<GetQuoteProps> = ({ onSubmit }) => {
             <Controller
               as={
                 <Select>
-                  {currencyList.map(currency => (
+                  {getCurrencyList('to').map(currency => (
                     <MenuItem key={currency.code} value={currency.code}>
                       {currency.name}
                     </MenuItem>
