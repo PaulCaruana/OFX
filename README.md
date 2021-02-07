@@ -3,7 +3,7 @@
 ### Description
 
 Overseas Foreign Exchange (OFX) online converter. This permits users to get spot quote details for converting 
-from one currency to another.
+from one currency to another. See https://fluvid.com/videos/detail/_qerOIYQXyTmQy4-7 for screen recording of UI.
 
 **Please note**: I have used NextJS, TypeScript, Storybook and SWR when demonstrating this application in order to show 
 how I would code a versatile and enterprise ready application. For a simple application like this, I could have 
