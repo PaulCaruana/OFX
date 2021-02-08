@@ -48,6 +48,7 @@ yarn start (ensure build has been done prior)
 - Enhance UI look and feel of page
 - Make phone input into a separate component
 - Add more information on UI regarding minimum transfer amounts
+- Make UI responsive and accessibility compliant
 - Add style components to ui and incorporate a better layout structure
 - Make themes fully functional
 
@@ -58,8 +59,10 @@ yarn start (ensure build has been done prior)
 - **Next JS**: Next.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. See nextjs.org for details. See https://www.typescriptlang.org/ for details. 
 - **TypeScript**: TypeScript is an open-source language which builds on JavaScript, one of the world’s most used tools, by adding static type definitions.
 - **Storybook**: Storybook is a development environment for UI components. 
-It allows you to browse a component library, view the different states 
-of each component, and interactively develop and test components. See https://storybook.js.org for details.
+It allows you to browse a component library, view the different states of each component, and interactively develop and test components. See https://storybook.js.org for details.
+
+- **react-hook-form** React-hook-form is an elegant solution to easily create and maintain forms in React. The beauty is that, after using a form-hook, still the form creation is done in a classic way of creating forms, viz. no new HOC component or no wrappers.
+See https://react-hook-form.com/ for details.
 - **material-ui**: In a nutshell, Material-UI is an open-source project that features React components that implement Google's Material Design. 
 See https://material-ui.com/ for details. This includes setting up light/dark themes
 - **jest**: Simple all emcompassing test solution. See https://jestjs.io/ for details.
