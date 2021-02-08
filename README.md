@@ -61,7 +61,7 @@ yarn start (ensure build has been done prior)
 - **Storybook**: Storybook is a development environment for UI components. 
 It allows you to browse a component library, view the different states of each component, and interactively develop and test components. See https://storybook.js.org for details.
 
-- **react-hook-form** React-hook-form is an elegant solution to easily create and maintain forms in React. The beauty is that, after using a form-hook, still the form creation is done in a classic way of creating forms, viz. no new HOC component or no wrappers.
+- **react-hook-form**: React-hook-form is an elegant solution to easily create and maintain and validate forms in React. The beauty is that, after using a form-hook, still the form creation is done in a classic way of creating forms, viz. no new HOC component or no wrappers.
 See https://react-hook-form.com/ for details.
 - **material-ui**: In a nutshell, Material-UI is an open-source project that features React components that implement Google's Material Design. 
 See https://material-ui.com/ for details. This includes setting up light/dark themes
