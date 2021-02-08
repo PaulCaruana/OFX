@@ -8,7 +8,7 @@ from one currency to another.
 **Please note**: I have used NextJS, TypeScript, Storybook and SWR when demonstrating this application in order to show 
 how I would code a versatile and enterprise ready application. For a simple application like this, I could have 
 written this as a simple CRA using fetch/axios and this would have provided a simpler solution with less overhead but
-in my mind would fail to show you a true world example.
+I think this would fail to reflect where the industry is moving at present.
  
 ### Prerequisites
 
