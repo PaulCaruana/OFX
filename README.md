@@ -3,7 +3,7 @@
 ### Description
 
 Overseas Foreign Exchange (OFX) online converter. This permits users to get spot quote details for converting 
-from one currency to another. See https://fluvid.com/videos/detail/_qerOIYQXyTmQy4-7 for screen recording of UI.
+from one currency to another. 
 
 **Please note**: I have used NextJS, TypeScript, Storybook and SWR when demonstrating this application in order to show 
 how I would code a versatile and enterprise ready application. For a simple application like this, I could have 
@@ -46,6 +46,7 @@ yarn start (ensure build has been done prior)
 - The Name, Email and Phone fields are not used. This would obviously be store and used in a real application
 - Use the error messages supplied from API when the request fails
 - Enhance UI look and feel of page
+- Make phone input into a separate component
 - Add more information on UI regarding minimum transfer amounts
 - Add style components to ui and incorporate a better layout structure
 - Make themes fully functional
