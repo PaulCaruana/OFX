@@ -56,7 +56,7 @@ yarn start (ensure build has been done prior)
 - Warnings on console
  
 ### Tech Stack
-- **Next JS**: Next.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. See nextjs.org for details. See https://www.typescriptlang.org/ for details. 
+- **NextJS**: Next.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. See nextjs.org for details. See https://www.typescriptlang.org/ for details. 
 - **TypeScript**: TypeScript is an open-source language which builds on JavaScript, one of the world’s most used tools, by adding static type definitions.
 - **Storybook**: Storybook is a development environment for UI components. 
 It allows you to browse a component library, view the different states of each component, and interactively develop and test components. See https://storybook.js.org for details.
