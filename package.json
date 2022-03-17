@@ -19,7 +19,7 @@
     "@material-ui/icons": "^4.11.2",
     "@testing-library/react": "^11.2.5",
     "axios": "^0.21.0",
-    "dotenv-load": "^2.0.0",
+    "dotenv-load": "^2.0.1",
     "material-ui-phone-number": "^2.2.6",
     "next": "^10.0.3",
     "next-compose-plugins": "^2.2.1",
