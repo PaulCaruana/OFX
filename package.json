@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.2",
-    "@material-ui/icons": "^4.11.2",
+    "@material-ui/icons": "^4.11.3",
     "@testing-library/react": "^11.2.5",
     "axios": "^0.21.0",
     "dotenv-load": "^2.0.0",
